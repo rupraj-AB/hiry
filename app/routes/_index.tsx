@@ -125,7 +125,7 @@ const Index = () => {
           />
           <TextArea
             label="With Different Rows"
-            placeholder="This textarea has min 3 and max 6 rows"
+            placeholder="This textarea "
             value=""
             onChange={(value) => console.log(value)}
             minRows={3}
@@ -150,6 +150,8 @@ const Index = () => {
         />
       </div>
 
+
+      <h2 className="text-xl font-semibold my-4">Modal Component</h2>
       <Dialog>
         <DialogTrigger>
           <Button>Open Modal</Button>
