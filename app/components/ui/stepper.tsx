@@ -31,8 +31,8 @@ const Stepper: React.FC<StepperProps> = ({ steps, activeStep = 0 }) => {
         const stepWidth = isLastStep
           ? isActive
             ? "10%"
-            : "4%"
-          : `${135 / steps.length}%`;
+            : "5%"
+          : `${145 / steps.length}%`;
 
         return (
           <React.Fragment key={index}>

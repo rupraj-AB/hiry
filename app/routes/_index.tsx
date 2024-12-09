@@ -6,6 +6,8 @@ import SearchIcon from "~/assets/icons/LinkIcon";
 import Colors from "~/constants/colors";
 import TagSelector from "~/components/ui/TagSelector";
 import Dropdown from "~/components/ui/dropdown";
+import MyForm from "./_selectUseCase";
+import Upload from "~/components/ui/Upload";
 
 const Index = () => {
   const steps = [
@@ -60,7 +62,7 @@ const Index = () => {
       {/* Stepper Component States */}
       <div className="mb-8 space-y-4">
         <h2 className="text-xl font-semibold mb-4">Stepper States</h2>
-        <div className="flex gap-10">
+        <div className="flex gap-10 sm:flex-row flex-col">
           <Stepper steps={steps} activeStep={0} />
           <Stepper steps={steps} activeStep={1} />
           <Stepper steps={steps} activeStep={2} />
@@ -83,11 +85,19 @@ const Index = () => {
         />
       </div>
 
+      {/* Upload Component */}
+      <div className="mb-8 space-y-4">
+        <h2 className="text-xl font-semibold mb-4">Upload Component</h2>
+        <div className="">
+          <Upload maxSize={10} accept="video/*" fileType = "video" />
+        </div>
+      </div>
+
       {/* dropdown */}
 
       <div className="mb-48">
         <h2 className="text-xl font-semibold mb-4">Dropdown Selector</h2>
-        <Dropdown
+        {/* <Dropdown
           label="Industry"
           value={""}
           onChange={() => {}}
@@ -98,7 +108,8 @@ const Index = () => {
             { value: "healthcare", label: "Healthcare" },
             { value: "finance", label: "Finance" },
           ]}
-        />
+        /> */}
+        <MyForm />
       </div>
     </div>
   );

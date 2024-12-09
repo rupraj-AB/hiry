@@ -7,7 +7,8 @@ export default {
     extend: {
       colors: {
         brand: {
-          primary: "#0706CD",
+          primary: "#0500FF",
+          theme: "#0706CD",
           secondary: "#0E0CFF",
           soft: "#e7f0ff",
         },
