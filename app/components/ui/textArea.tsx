@@ -47,7 +47,7 @@ const TextArea: React.FC<TextAreaWithCounterProps> = ({
       )}
       <div className="relative">
         <textarea
-          className={`w-full p-3 border rounded-md focus:ring-neutral-primary focus:border-neutral-primary 
+          className={`w-full p-3 border rounded-md focus:ring-neutral-border active:border-neutral-border focus:border-neutral-border  
             ${error ? "border-red-500" : "border-neutral-light"}
             ${className}`}
           rows={rows}

@@ -91,6 +91,7 @@ const Index = () => {
             "Ads / Marketing",
             "Matchmaking",
           ]}
+          label="How did you hear about us?"
           selectedTags={selectedTags}
           onSelect={handleTagSelect}
         />
