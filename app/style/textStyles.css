@@ -1,0 +1,86 @@
+.fs-400-12 {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15.6px;
+  }
+  
+  .fs-400-14 {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+  }
+  
+  .fs-400-14-18 {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18.2px;
+  }
+  
+  .fs-400-12-18 {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+  
+  .fs-500-18 {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+  }
+  
+  .fs-500-28 {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 39.2px;
+  }
+  
+  .fs-500-16 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20.8px;
+  }
+  
+  .fs-550-20 {
+    font-size: 20px;
+    font-weight: 550;
+    line-height: 24px;
+  }
+  
+  .fs-550-32 {
+    font-size: 32px;
+    font-weight: 550;
+    line-height: 38.4px;
+  }
+  
+  @media (max-width: 768px) {
+    .fs-550-32 {
+      font-size: 24px;
+      font-weight: 550;
+      line-height: 28.8px;
+    }
+  }
+  
+  .fs-400-16 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20.8px;
+  }
+  
+  .fs-400-16-24 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  
+  .fs-500-14 {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18.2px;
+  }
+  
+  .fs-600-20 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+  
