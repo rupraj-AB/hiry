@@ -39,6 +39,7 @@ const MyForm = () => {
       <Dropdown
         label="Select Skills"
         placeholder="Select one or more skills"
+        description="Selecting skills will enhance the chance of getting a job"
         options={skillOptions}
         isMulti
         icon={<LinkIcon />}

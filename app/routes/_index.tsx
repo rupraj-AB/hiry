@@ -19,6 +19,7 @@ import {
 
 import TextArea from "~/components/ui/textArea";
 import Accordion from "~/components/ui/accordion";
+import ImageUpload from "~/components/ui/imageUploader";
 
 const Index = () => {
   const steps = [
@@ -26,7 +27,8 @@ const Index = () => {
     { text: "Step 2", icon: <SearchIcon color={Colors.status.info.dark} /> },
     { text: "Step 3", icon: <SearchIcon color={Colors.status.info.dark} /> },
   ];
-
+  const [profilePicture, setProfilePicture] = useState<File | null>(null);
+  const [CompanyLogo, setCompanyLogo] = useState<File | null>(null);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
   const handleTagSelect = (tag: string) => {
@@ -40,7 +42,6 @@ const Index = () => {
       <h1 className="text-2xl font-bold mb-6 text-brand-primary">
         Component Showcase
       </h1>
-
       {/* Input Component States */}
       <div className="mb-8">
         <h2 className="text-xl font-semibold mb-4">Input States</h2>
@@ -55,7 +56,6 @@ const Index = () => {
           />
         </div>
       </div>
-
       {/* Button Component States */}
       <div className="mb-8">
         <h2 className="text-xl font-semibold mb-4">Button States</h2>
@@ -69,7 +69,6 @@ const Index = () => {
           Disabled
         </Button>
       </div>
-
       {/* Stepper Component States */}
       <div className="mb-8 space-y-4">
         <h2 className="text-xl font-semibold mb-4">Stepper States</h2>
@@ -79,7 +78,6 @@ const Index = () => {
           <Stepper steps={steps} activeStep={2} />
         </div>
       </div>
-
       {/* Tag Selector Component */}
       <div className="mb-8">
         <h2 className="text-xl font-semibold mb-4">Tag Selector</h2>
@@ -96,12 +94,10 @@ const Index = () => {
           onSelect={handleTagSelect}
         />
       </div>
-
       <div className="mb-8">
         <h2 className="text-xl font-semibold mb-4">Dropdown Selector</h2>
         <MyForm />
       </div>
-
       {/* Upload Component */}
       <div className="mb-8 space-y-4">
         <h2 className="text-xl font-semibold mb-4">Upload Component</h2>
@@ -109,7 +105,6 @@ const Index = () => {
           <Upload maxSize={10} accept="video/*" fileType="video" />
         </div>
       </div>
-
       {/* TextArea Component */}
       <div className="mb-8 space-y-4">
         <h2 className="text-xl font-semibold mb-4">TextArea Component</h2>
@@ -139,8 +134,21 @@ const Index = () => {
           />
         </div>
       </div>
-
       {/* Modal */}
+
+      <div className="my-8">
+        <ImageUpload
+          onImageChange={() => {}}
+          labels={{
+            uploadLabel: "Choose Profile Picture",
+            uploadSubtext: "Upload an image to personalize your profile",
+            uploadingLabel: "Processing",
+            uploadingSubtext: "Your image is being uploaded",
+            successLabel: "Image Uploaded",
+            successSubtext: "Your profile picture is set",
+          }}
+        />
+      </div>
 
       <Dialog>
         <DialogTrigger>
@@ -156,7 +164,6 @@ const Index = () => {
           </DialogHeader>
         </DialogContent>
       </Dialog>
-
       <h2 className="text-xl font-semibold mb-4 mt-12">Accordion Component</h2>
       <Accordion
         header="Introduction Checklist"

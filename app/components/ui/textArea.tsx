@@ -56,12 +56,12 @@ const TextArea: React.FC<TextAreaWithCounterProps> = ({
           placeholder={placeholder}
           maxLength={maxCharacters}
         />
-        <div className="absolute bottom-2.5 right-3 fs-400-12 text-neutral-tertiary">
+        <div className="absolute bottom-2.5 right-3 fs-400-12 text-neutral-text-tertiary">
           {value.length}/{maxCharacters}
         </div>
       </div>
       {error && (
-        <p className="mt-1 text-sm text-destructive-800 fs-400-12 flex items-center">
+        <p className="mt-1 text-sm text-status-error-dark fs-400-12 flex items-center">
           <span className="mr-1">
             <XCircleIcon />
           </span>{" "}
