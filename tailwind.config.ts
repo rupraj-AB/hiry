@@ -38,7 +38,7 @@ export default {
           white: "#FFFFFF",
           black: "#18181B",
           border: "#E4E4E7",
-		  defaultBlack: "#1E1E1E",
+          defaultBlack: "#1E1E1E",
           text: {
             primary: "#18181B",
             secondary: "#52525B",
@@ -98,6 +98,7 @@ export default {
         "custom-md": "0px 4px 8px -2px #1F29371A",
         "custom-light": "0px 1px 2px 0px rgba(31, 41, 55, 0.05)",
         "custom-light-md": "0px 1px 4px 0px rgba(31, 41, 55, 0.04)",
+        "custom-modal": "0px 24px 48px -12px rgba(31, 41, 55, 0.18)",
       },
       fontFamily: {
         sans: [
@@ -115,6 +116,28 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      keyframes: {
+        "accordion-down": {
+          from: {
+            height: "0",
+          },
+          to: {
+            height: "var(--radix-accordion-content-height)",
+          },
+        },
+        "accordion-up": {
+          from: {
+            height: "var(--radix-accordion-content-height)",
+          },
+          to: {
+            height: "0",
+          },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },

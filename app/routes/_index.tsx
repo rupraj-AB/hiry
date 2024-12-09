@@ -8,6 +8,17 @@ import TagSelector from "~/components/ui/TagSelector";
 import Dropdown from "~/components/ui/dropdown";
 import MyForm from "./_selectUseCase";
 import Upload from "~/components/ui/Upload";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "~/components/ui/dialog";
+
+import TextArea from "~/components/ui/textArea";
+import Accordion from "~/components/ui/accordion";
 
 const Index = () => {
   const steps = [
@@ -85,32 +96,92 @@ const Index = () => {
         />
       </div>
 
+      <div className="mb-8">
+        <h2 className="text-xl font-semibold mb-4">Dropdown Selector</h2>
+        <MyForm />
+      </div>
+
       {/* Upload Component */}
       <div className="mb-8 space-y-4">
         <h2 className="text-xl font-semibold mb-4">Upload Component</h2>
         <div className="">
-          <Upload maxSize={10} accept="video/*" fileType = "video" />
+          <Upload maxSize={10} accept="video/*" fileType="video" />
         </div>
       </div>
 
-      {/* dropdown */}
-
-      <div className="mb-48">
-        <h2 className="text-xl font-semibold mb-4">Dropdown Selector</h2>
-        {/* <Dropdown
-          label="Industry"
-          value={""}
-          onChange={() => {}}
-          placeholder="Select industry"
-          name="industry"
-          options={[
-            { value: "technology", label: "Technology" },
-            { value: "healthcare", label: "Healthcare" },
-            { value: "finance", label: "Finance" },
-          ]}
-        /> */}
-        <MyForm />
+      {/* TextArea Component */}
+      <div className="mb-8 space-y-4">
+        <h2 className="text-xl font-semibold mb-4">TextArea Component</h2>
+        <div className=" space-y-4">
+          <TextArea
+            label="Description"
+            placeholder="Enter your description"
+            value=""
+            onChange={(value) => console.log(value)}
+            maxCharacters={200}
+          />
+          <TextArea
+            label="Message with Error"
+            placeholder="Type your message"
+            error="This field is required"
+            value="Some invalid text"
+            onChange={(value) => console.log(value)}
+          />
+          <TextArea
+            label="With Different Rows"
+            placeholder="This textarea has min 3 and max 6 rows"
+            value=""
+            onChange={(value) => console.log(value)}
+            minRows={3}
+            maxRows={6}
+            maxCharacters={150}
+          />
+        </div>
       </div>
+
+      {/* Modal */}
+
+      <Dialog>
+        <DialogTrigger>
+          <Button>Open Modal</Button>
+        </DialogTrigger>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Are you absolutely sure?</DialogTitle>
+            <DialogDescription>
+              This action cannot be undone. This will permanently delete your
+              account and remove your data from our servers.
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
+
+      <h2 className="text-xl font-semibold mb-4 mt-12">Accordion Component</h2>
+      <Accordion
+        header="Introduction Checklist"
+        content={
+          <div>
+            <p>
+              Feel free to tell us about any relevant job experience you've had.
+              We recommend you to cover topics like:
+            </p>
+            <ul>
+              <li>
+                Share your core skills, main areas of expertise, and any
+                standout experience relevant to your work.
+              </li>
+              <li>
+                Highlight what makes you unique—this could be a skill, a
+                quality, or your approach to work.
+              </li>
+              <li>
+                Talk about your working process, communication style, and how
+                you handle feedback or collaboration.
+              </li>
+            </ul>
+          </div>
+        }
+      />
     </div>
   );
 };
