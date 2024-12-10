@@ -119,8 +119,6 @@ const Dropdown: React.FC<DropdownProps> = ({
     onChange(isMulti ? [] : "");
   };
 
-  console.log(selectedOptions, "selcetd opetion");
-
   return (
     <div className="w-full" ref={dropdownRef}>
       {label && (
@@ -197,6 +195,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   placeholder={placeholder}
+                  autoFocus={searchable && isOpen}
                   className={`flex-grow h-full border-none focus:outline-none py-1`}
                 />
               ) : (
@@ -246,32 +245,61 @@ const Dropdown: React.FC<DropdownProps> = ({
           </div>
         </div>
 
-        {isOpen && (
-          <div className="absolute z-10 w-full mt-1 bg-white border border-neutral-border rounded-lg shadow-lg p-2">
-            <div className="max-h-60 overflow-y-auto">
-              {filteredOptions.map((option) => (
-                <button
-                  key={option.value}
-                  type="button"
-                  onClick={() => handleSelect(option)}
-                  className="w-full px-2 py-2 text-left hover:bg-neutral-background-soft"
-                >
-                  <Checkbox
-                    label={option.label}
-                    checked={selectedOptions.some(
-                      (o) => o.value === option.value
-                    )}
-                  />
-                </button>
-              ))}
-              {filteredOptions.length === 0 && (
-                <div className="px-3 py-2.5 text-neutral-text-tertiary">
-                  No options found
-                </div>
-              )}
-            </div>
+        {/* Animated Dropdown Options */}
+        <div
+          className={`
+            absolute 
+            z-10 
+            w-full 
+            mt-1 
+            bg-white 
+            border 
+            border-neutral-border 
+            rounded-lg 
+            shadow-lg 
+            p-2
+            transition-all 
+            duration-300 
+            ease-in-out
+            origin-top
+            ${
+              isOpen
+                ? "opacity-100 scale-y-100 visible"
+                : "opacity-0 scale-y-0 invisible"
+            }
+          `}
+        >
+          <div className="max-h-60 overflow-y-auto">
+            {filteredOptions.map((option) => (
+              <button
+                key={option.value}
+                type="button"
+                onClick={() => handleSelect(option)}
+                className="
+                  w-full 
+                  px-2 
+                  py-2 
+                  text-left 
+                  hover:bg-neutral-background-soft
+                  transition-colors 
+                  duration-200
+                "
+              >
+                <Checkbox
+                  label={option.label}
+                  checked={selectedOptions.some(
+                    (o) => o.value === option.value
+                  )}
+                />
+              </button>
+            ))}
+            {filteredOptions.length === 0 && (
+              <div className="px-3 py-2.5 text-neutral-text-tertiary">
+                No options found
+              </div>
+            )}
           </div>
-        )}
+        </div>
       </div>
 
       {error && (

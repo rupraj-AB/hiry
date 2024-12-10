@@ -20,6 +20,7 @@ import {
 import TextArea from "~/components/ui/textArea";
 import Accordion from "~/components/ui/accordion";
 import ImageUpload from "~/components/ui/imageUploader";
+import EnvelopIcon from "~/assets/icons/EnvelopIcon";
 
 const Index = () => {
   const steps = [
@@ -38,7 +39,7 @@ const Index = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-2xl ">
+    <div className="container mx-auto px-4 py-8 max-w-2xl pb-[300px]">
       <h1 className="text-2xl font-bold mb-6 text-brand-primary">
         Component Showcase
       </h1>
@@ -46,7 +47,7 @@ const Index = () => {
       <div className="mb-8">
         <h2 className="text-xl font-semibold mb-4">Input States</h2>
         <div className="space-y-4">
-          <Input name="default" label="Default" placeholder="Default state" />
+          <Input icon={<EnvelopIcon/>} name="default" label="Default" placeholder="Default state" />
           <Input name="focused" label="Focused" placeholder="Focused state" />
           <Input
             name="error"
@@ -188,6 +189,39 @@ const Index = () => {
                 Talk about your working process, communication style, and how
                 you handle feedback or collaboration.
               </li>
+              
+            </ul>
+
+            <ul>
+              <li>
+                Share your core skills, main areas of expertise, and any
+                standout experience relevant to your work.
+              </li>
+              <li>
+                Highlight what makes you unique—this could be a skill, a
+                quality, or your approach to work.
+              </li>
+              <li>
+                Talk about your working process, communication style, and how
+                you handle feedback or collaboration.
+              </li>
+              
+            </ul>
+
+            <ul>
+              <li>
+                Share your core skills, main areas of expertise, and any
+                standout experience relevant to your work.
+              </li>
+              <li>
+                Highlight what makes you unique—this could be a skill, a
+                quality, or your approach to work.
+              </li>
+              <li>
+                Talk about your working process, communication style, and how
+                you handle feedback or collaboration.
+              </li>
+              
             </ul>
           </div>
         }

@@ -35,7 +35,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
     uploadingLabel = "Uploading",
     uploadingSubtext = "Please wait while your profile picture is being uploaded",
     successLabel = "Profile Picture",
-    successSubtext = "Profile picture uploaded successfully"
+    successSubtext = "Profile picture uploaded successfully",
   } = labels;
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -84,20 +84,14 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
       <div>
         <div className="flex space-y-1 flex-col">
           <label className="block fs-500-14 text-neutral-black">
-            {isUploading 
-              ? uploadingLabel 
-              : image 
-                ? successLabel 
-                : uploadLabel
-            }
+            {isUploading ? uploadingLabel : image ? successLabel : uploadLabel}
           </label>
           <h2 className="text-neutral-text-secondary fs-400-12">
-            {isUploading 
+            {isUploading
               ? uploadingSubtext
-              : image 
-                ? successSubtext 
-                : uploadSubtext
-            }
+              : image
+              ? successSubtext
+              : uploadSubtext}
           </h2>
           <h4 className="text-neutral-text-secondary mb-3 fs-400-12">
             Maximum size {maxSizeInMB}MB.
@@ -121,7 +115,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
                   ? "bg-neutral-border text-neutral-text-disabled cursor-not-allowed"
                   : image
                   ? "bg-white text-neutral-black border border-neutral-border hover:bg-blue-50"
-                  : "bg-brand-secondary text-white hover:bg-blue-700"
+                  : "bg-brand-secondary text-white hover:scale-[0.95] transition-all ease-in-out duration-300"
               }
             `}
             >
